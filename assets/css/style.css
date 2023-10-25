@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: aqua;
+}
+
+nav {
+    color: rgb(0, 255, 115);
+
+}
+
+header {
+    background-color: orange;
+    
+}
+
+main {
+    background-color: greenyellow;
+
+}
+
+footer {
+    background-color: darkred;
+}
+

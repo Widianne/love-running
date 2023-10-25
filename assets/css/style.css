@@ -17,23 +17,79 @@ body {
 }
 
 h1 {
-    color: aqua;
+    color: 252525;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 nav {
-    color: rgb(0, 255, 115);
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    left: 0;
+    padding: 0 1rem;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: none;
+    top: 100%; /*makes sure that the drop down menu dosent go over the header logo. 100% tells that the navigation element that the top of it should start on the bottom of its parrent. 0% represents the bottom of it*/
 
 }
 
+/* nav toggle situation. the ~ indicates that nav is targeted*/
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+#nav-toggle {
+    display: none; /*takes away the checkbox*/
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+}
+
+#menu {
+    font-size: 110%;
+    letter-spacing: 4px;
+    list-style-type: none;
+    color: #3a3a3a;
+
+}
+
+/* list nav/menu styling spesifics*/
+#menu > li {
+    margin-bottom: 1em;
+}
+.active {
+    border-bottom: 1px solid #3a3a3a;
+
+}
 header {
-    background-color: orange;
+    background-color: #ffffff;
+    /*mobile styling*/
+    padding: 0 1rem;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    box-shadow: 0 2px 2px #a3a3a3;
+    /* puts burger menu thing on top of the header logo situation n makes it look prettyyy*/
+    display: flex; 
+    justify-content: space-between;
+    align-items: baseline;
+
     
 }
 
+header a {
+    text-decoration: 0;
+    color: inherit;
+}
+
 main {
-    background-color: rgb(210, 222, 192);
+    background-color: rgb(167, 216, 231);
     flex: 1 0 auto;
     /*make main place take up any surplus space*/
+    margin-top: 47px; /*pushes the contetnt down so its under the menu n logo header situation*/
 
 }
 
@@ -42,3 +98,50 @@ footer {
     
 }
 
+
+/*media query to set the doffrant screen sizes n decide how the content in each should look (768px and up)*/
+@media screen and (min-width: 768px){
+    /*evertyhting written here only effects the bigger screen looks*/
+    /*header*/
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+
+    /* this makes the menu looking nice and bing dispaled hoizontely int the right corner, also hides the X*/
+    #menu {
+        display: flex;
+    }
+
+    #menu > li {
+        padding-left: 1rem;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    #logo {
+        font-size: 280%;
+        line-height: 75px;
+        #margin: 0 0.5rem;
+
+    }
+
+    /*main content*/
+    /*push main content donw to accomidate screen size and larger header*/
+    main {
+        margin-top: 89px;
+    }
+
+/* for large deivses 992px n up like laptops*/
+    @media screen and (mai-widht: 992px) {
+        #menu a:hoover {
+            border-bottom: 1px solid #3a3a3a;
+        }
+    }
+
+}

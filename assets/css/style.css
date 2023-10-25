@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* generic project styles*/
+    color: #a3a3a3;
+}
+
 h1 {
     color: aqua;
 }
@@ -20,10 +28,13 @@ header {
 
 main {
     background-color: greenyellow;
+    flex: 1 0 auto;
+    /*make main place take up any surplus space*/
 
 }
 
 footer {
     background-color: darkred;
+    
 }
 
